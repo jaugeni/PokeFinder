@@ -14,6 +14,7 @@
 		9323216A1E2F1D0B0040622D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 932321691E2F1D0B0040622D /* Assets.xcassets */; };
 		9323216D1E2F1D0B0040622D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9323216B1E2F1D0B0040622D /* LaunchScreen.storyboard */; };
 		932321751E2F1D4D0040622D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 932321741E2F1D4D0040622D /* GoogleService-Info.plist */; };
+		93A3BD491E2FB10D00934A30 /* PokeAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3BD481E2FB10D00934A30 /* PokeAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9323216C1E2F1D0B0040622D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9323216E1E2F1D0B0040622D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		932321741E2F1D4D0040622D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93A3BD481E2FB10D00934A30 /* PokeAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,15 +73,32 @@
 		932321611E2F1D0B0040622D /* PokeFinder */ = {
 			isa = PBXGroup;
 			children = (
+				93A3BD461E2FB0B800934A30 /* Model */,
+				93A3BD471E2FB0C300934A30 /* Controller */,
 				932321621E2F1D0B0040622D /* AppDelegate.swift */,
-				932321641E2F1D0B0040622D /* ViewController.swift */,
 				932321661E2F1D0B0040622D /* Main.storyboard */,
-				932321691E2F1D0B0040622D /* Assets.xcassets */,
 				9323216B1E2F1D0B0040622D /* LaunchScreen.storyboard */,
+				932321691E2F1D0B0040622D /* Assets.xcassets */,
 				932321741E2F1D4D0040622D /* GoogleService-Info.plist */,
 				9323216E1E2F1D0B0040622D /* Info.plist */,
 			);
 			path = PokeFinder;
+			sourceTree = "<group>";
+		};
+		93A3BD461E2FB0B800934A30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93A3BD481E2FB10D00934A30 /* PokeAnnotation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		93A3BD471E2FB0C300934A30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				932321641E2F1D0B0040622D /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		CE50D1F846AFAAF84541CBAA /* Pods */ = {
@@ -217,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				932321651E2F1D0B0040622D /* ViewController.swift in Sources */,
+				93A3BD491E2FB10D00934A30 /* PokeAnnotation.swift in Sources */,
 				932321631E2F1D0B0040622D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +403,7 @@
 				932321731E2F1D0B0040622D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
