@@ -12,7 +12,7 @@ import GeoFire
 import FirebaseDatabase
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
+    
     @IBOutlet weak var mapView: MKMapView!
     
     let locationManager = CLLocationManager()
@@ -94,7 +94,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         return annotationView
     }
-
+    
     func createSighting(forLocation location: CLLocation, withPokemon pokeId: Int) {
         
         geoFire.setLocation(location, forKey: "\(pokeId)")
@@ -122,8 +122,13 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         if let anno = view.annotation as? PokeAnnotation {
-            let place = MKPlacemark(coordinate: anno.coordinate)
             
+            var place: MKPlacemark!
+            if #available(iOS 10.0, *){
+                place = MKPlacemark(coordinate: anno.coordinate)
+            } else { 
+                place = MKPlacemark(coordinate: anno.coordinate, addressDictionary: nil)
+            }
             
             let destination = MKMapItem(placemark: place)
             destination.name = "Pokemon Sighting"
@@ -135,7 +140,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             MKMapItem.openMaps(with: [destination], launchOptions: option)
         }
     }
-
+    
     @IBAction func spotRandomPokemon(_ sender: Any) {
         
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
@@ -143,6 +148,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let rand = arc4random_uniform(151) + 1
         createSighting(forLocation: loc, withPokemon: Int(rand))
     }
-
+    
 }
 
